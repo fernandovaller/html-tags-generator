@@ -292,4 +292,16 @@ class Html
     {
         return '<bdo' . Parse::attr($data) . '>' . $label . '</bdo>';
     }
+
+    /**
+     * Gerar tag <a></a>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function a($label, $data = [])
+    {
+        return '<a' . Parse::attr($data) . '>' . $label . '</a>';
+    }
 }
