@@ -436,6 +436,18 @@ class Html
     }
 
     /**
+     * Gerar tag <footer></footer>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function footer($content = [], $data = [])
+    {
+        return '<footer' . Parse::attr($data) . ' >' . $content . '</footer>';
+    }
+
+    /**
      * Gerar tag <div></div>
      *
      * @param string $content
