@@ -555,4 +555,15 @@ class Html
     {
         return '<span' . Parse::attr($data) . '>' . $label . '</span>';
     }
+
+    /**
+     * Gerar tag <iframe></iframe>
+     *
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function iframe($data = [])
+    {
+        return '<iframe ' . Parse::attr($data) . '></iframe>';
+    }
 }
