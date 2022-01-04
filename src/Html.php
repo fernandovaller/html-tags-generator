@@ -327,4 +327,76 @@ class Html
     {
         return '<picture>' . $content . '</picture>';
     }
+
+    /**
+     * Gerar tag <ul></ul>
+     *
+     * @param array $content li tags
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function ul($content = [], $data = [])
+    {
+        return '<ul ' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</ul>';
+    }
+
+    /**
+     * Gerar tag <ol></ol>
+     *
+     * @param array $content li tags
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function ol($content = [], $data = [])
+    {
+        return '<ol ' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</ol>';
+    }
+
+    /**
+     * Gerar tag <dl></dl>
+     *
+     * @param array $content dt tags
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function dl($content = [], $data = [])
+    {
+        return '<dl ' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</dl>';
+    }
+
+    /**
+     * Gerar tag <li></li>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function li($label, $data = [])
+    {
+        return '<li' . Parse::attr($data) . '>' . $label . '</li>';
+    }
+
+    /**
+     * Gerar tag <dt></dt>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function dt($label, $data = [])
+    {
+        return '<dt' . Parse::attr($data) . '>' . $label . '</dt>';
+    }
+
+    /**
+     * Gerar tag <dd></dd>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function dd($label, $data = [])
+    {
+        return '<dd' . Parse::attr($data) . '>' . $label . '</dd>';
+    }
 }
