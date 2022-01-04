@@ -10,7 +10,6 @@ class Html
      * Gerar tag <!-- label -->
      *
      * @param string $label
-     * @param array $data Attributes in format [key=>value]
      * @return string
      */
     public static function comment($label)
