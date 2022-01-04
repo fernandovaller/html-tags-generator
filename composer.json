@@ -1,6 +1,12 @@
 {
     "name": "fernandovaller/html-tags-generator",
     "description": "Simple HTML Tag Generator",
+    "keywords": [
+        "html",
+        "tags",
+        "generator"
+    ],
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "FVCode\\Html\\": "src/"
