@@ -306,15 +306,15 @@ class Html
     }
 
     /**
-     * Gerar tag <img></img>
+     * Gerar tag <img />
      *
      * @param string $label
      * @param array $data Attributes in format [key=>value]
      * @return string
      */
-    public static function img($label, $data = [])
+    public static function img($data = [])
     {
-        return '<img' . Parse::attr($data) . '>' . $label . '</img>';
+        return '<img' . Parse::attr($data) . ' />';
     }
 
     /**
@@ -329,6 +329,29 @@ class Html
     }
 
     /**
+     * Gerar tag <figure></figure>
+     *
+     * @param string $content
+     * @return string
+     */
+    public static function figure($content)
+    {
+        return '<figure>' . $content . '</figure>';
+    }
+
+    /**
+     * Gerar tag <figcaption></figcaption>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function figcaption($label, $data = [])
+    {
+        return '<figcaption' . Parse::attr($data) . '>' . $label . '</figcaption>';
+    }
+
+    /**
      * Gerar tag <ul></ul>
      *
      * @param array $content li tags
@@ -337,7 +360,7 @@ class Html
      */
     public static function ul($content = [], $data = [])
     {
-        return '<ul ' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</ul>';
+        return '<ul' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</ul>';
     }
 
     /**
@@ -349,7 +372,7 @@ class Html
      */
     public static function ol($content = [], $data = [])
     {
-        return '<ol ' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</ol>';
+        return '<ol' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</ol>';
     }
 
     /**
@@ -361,7 +384,7 @@ class Html
      */
     public static function dl($content = [], $data = [])
     {
-        return '<dl ' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</dl>';
+        return '<dl' . Parse::attr($data) . ' >' . Parse::toString($content, "\n") . '</dl>';
     }
 
     /**
@@ -398,5 +421,90 @@ class Html
     public static function dd($label, $data = [])
     {
         return '<dd' . Parse::attr($data) . '>' . $label . '</dd>';
+    }
+
+    /**
+     * Gerar tag <div></div>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function div($content = [], $data = [])
+    {
+        return '<div' . Parse::attr($data) . ' >' . $content . '</div>';
+    }
+
+    /**
+     * Gerar tag <article></article>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function article($content = [], $data = [])
+    {
+        return '<article' . Parse::attr($data) . ' >' . $content . '</article>';
+    }
+
+    /**
+     * Gerar tag <section></section>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function section($content = [], $data = [])
+    {
+        return '<section' . Parse::attr($data) . ' >' . $content . '</section>';
+    }
+
+    /**
+     * Gerar tag <aside></aside>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function aside($content = [], $data = [])
+    {
+        return '<aside' . Parse::attr($data) . ' >' . $content . '</aside>';
+    }
+
+    /**
+     * Gerar tag <fieldset></fieldset>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function fieldset($content = [], $data = [])
+    {
+        return '<fieldset' . Parse::attr($data) . ' >' . $content . '</fieldset>';
+    }
+
+    /**
+     * Gerar tag <legend></legend>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function legend($label, $data = [])
+    {
+        return '<legend' . Parse::attr($data) . '>' . $label . '</legend>';
+    }
+
+
+    /**
+     * Gerar tag <span></span>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function span($label, $data = [])
+    {
+        return '<span' . Parse::attr($data) . '>' . $label . '</span>';
     }
 }
