@@ -424,6 +424,18 @@ class Html
     }
 
     /**
+     * Gerar tag <header></header>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function header($content = [], $data = [])
+    {
+        return '<header' . Parse::attr($data) . ' >' . $content . '</header>';
+    }
+
+    /**
      * Gerar tag <div></div>
      *
      * @param string $content
