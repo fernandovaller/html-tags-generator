@@ -448,6 +448,30 @@ class Html
     }
 
     /**
+     * Gerar tag <main></main>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function main($content = [], $data = [])
+    {
+        return '<main' . Parse::attr($data) . ' >' . $content . '</main>';
+    }
+
+    /**
+     * Gerar tag <nav></nav>
+     *
+     * @param string $content
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function nav($content = [], $data = [])
+    {
+        return '<nav' . Parse::attr($data) . ' >' . $content . '</nav>';
+    }
+
+    /**
      * Gerar tag <div></div>
      *
      * @param string $content
