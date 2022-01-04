@@ -7,7 +7,7 @@ Simple HTML Tag Generator
 Install the latest version with
 
 ```bash
-$ composer require fernandovaller/
+$ composer require fernandovaller/html-tags-generator
 ```
 
 ## Basic Usage
