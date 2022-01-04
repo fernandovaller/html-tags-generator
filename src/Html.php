@@ -304,4 +304,27 @@ class Html
     {
         return '<a' . Parse::attr($data) . '>' . $label . '</a>';
     }
+
+    /**
+     * Gerar tag <img></img>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function img($label, $data = [])
+    {
+        return '<img' . Parse::attr($data) . '>' . $label . '</img>';
+    }
+
+    /**
+     * Gerar tag <picture></picture>
+     *
+     * @param string $content
+     * @return string
+     */
+    public static function picture($content)
+    {
+        return '<picture>' . $content . '</picture>';
+    }
 }
