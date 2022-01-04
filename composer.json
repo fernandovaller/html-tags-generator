@@ -1,0 +1,14 @@
+{
+    "name": "fernandovaller/html-tags-generator",
+    "description": "Simple HTML Tag Generator",
+    "autoload": {
+        "psr-4": {
+            "FVCode\\Html\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "Fernando Valler",
+        "email": "fernandovaller@gmail.com"
+    }],
+    "require": {}
+}
