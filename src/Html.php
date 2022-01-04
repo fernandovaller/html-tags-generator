@@ -209,4 +209,76 @@ class Html
     {
         return '<sup' . Parse::attr($data) . '>' . $label . '</sup>';
     }
+
+    /**
+     * Gerar tag <blockquote></blockquote>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function blockquote($label, $data = [])
+    {
+        return '<blockquote' . Parse::attr($data) . '>' . $label . '</blockquote>';
+    }
+
+    /**
+     * Gerar tag <q></q>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function q($label, $data = [])
+    {
+        return '<q' . Parse::attr($data) . '>' . $label . '</q>';
+    }
+
+    /**
+     * Gerar tag <abbr></abbr>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function abbr($label, $data = [])
+    {
+        return '<abbr' . Parse::attr($data) . '>' . $label . '</abbr>';
+    }
+
+    /**
+     * Gerar tag <address></address>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function address($label, $data = [])
+    {
+        return '<address' . Parse::attr($data) . '>' . $label . '</address>';
+    }
+
+    /**
+     * Gerar tag <cite></cite>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function cite($label, $data = [])
+    {
+        return '<cite' . Parse::attr($data) . '>' . $label . '</cite>';
+    }
+
+    /**
+     * Gerar tag <bdo></bdo>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function bdo($label, $data = [])
+    {
+        return '<bdo' . Parse::attr($data) . '>' . $label . '</bdo>';
+    }
 }
