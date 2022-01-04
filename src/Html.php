@@ -566,4 +566,167 @@ class Html
     {
         return '<iframe ' . Parse::attr($data) . '></iframe>';
     }
+
+    /**
+     * Gerar tag <table></table>
+     *
+     * @param array $content [ thead => [], tbody => [] , tfoot => [] ]
+     * @param array $data Attributes [ table => [key=>value], thead => [...], tbody => [...], tfoot => [...] ]
+     * @return string
+     */
+    public static function table($content = [], $data = [])
+    {
+        $thead = isset($content['thead']) ? self::thead($content['thead'], isset($data['thead']) ? $data['thead'] : []) : '';
+
+        $tbody = isset($content['tbody']) ?  self::tbody($content['tbody'], isset($data['tbody']) ? $data['tbody'] : []) : '';
+
+        $tfoot = isset($content['tfoot']) ?  self::tfoot($content['tfoot'], isset($data['tfoot']) ? $data['tfoot'] : []) : '';
+
+        return '<table' . Parse::attr(isset($data['table']) ? $data['table'] : []) . '>' . $thead . $tbody . $tfoot . '</table>';
+    }
+
+    /**
+     * Gerar tag <thead></thead>
+     *
+     * @param array $content th
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function thead($content = [], $data = [])
+    {
+        $tr = [];
+        $td = [];
+
+        foreach ($content as $key => $row) {
+
+            if (is_array($row)) {
+                $td_temp = [];
+
+                foreach ($row as $value) {
+                    $td_temp[] = self::th($value);
+                }
+
+                $tr[] = self::tr($td_temp, $data);
+            }
+
+            if (is_string($row)) {
+                $td[$key] = self::th($row);
+            }
+        }
+
+        if (!empty($td)) {
+            $tr[] = self::tr($td, $data);
+        }
+
+        return '<thead>' . Parse::toString($tr, "\n") . '</thead>';
+    }
+
+    /**
+     * Gerar tag <tbody></tbody>
+     *
+     * @param array $data tr
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function tbody($content = [], $data = [])
+    {
+        $tr = [];
+        $td = [];
+
+        foreach ($content as $key => $row) {
+
+            if (is_array($row)) {
+                $td_temp = [];
+
+                foreach ($row as $value) {
+                    $td_temp[] = self::td($value);
+                }
+
+                $tr[] = self::tr($td_temp, $data);
+            }
+
+            if (is_string($row)) {
+                $td[$key] = self::td($row);
+            }
+        }
+
+        if (!empty($td)) {
+            $tr[] = self::tr($td, $data);
+        }
+
+        return '<tbody>' . Parse::toString($tr, "\n") . '</tbody>';
+    }
+
+    /**
+     * Gerar tag <tfoot></tfoot>
+     *
+     * @param array $data tr
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function tfoot($content = [], $data = [])
+    {
+        $tr = [];
+        $td = [];
+
+        foreach ($content as $key => $row) {
+
+            if (is_array($row)) {
+                $td_temp = [];
+
+                foreach ($row as $value) {
+                    $td_temp[] = self::td($value);
+                }
+
+                $tr[] = self::tr($td_temp, $data);
+            }
+
+            if (is_string($row)) {
+                $td[$key] = self::td($row);
+            }
+        }
+
+        if (!empty($td)) {
+            $tr[] = self::tr($td, $data);
+        }
+
+        return '<tfoot>' . Parse::toString($tr, "\n") . '</tfoot>';
+    }
+
+
+    /**
+     * Gerar tag <tr></tr>
+     *
+     * @param array $td
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function tr($td = [], $data = [])
+    {
+        return '<tr' . Parse::attr($data) . '>' . Parse::toString($td, '') . '</tr>';
+    }
+
+    /**
+     * Gerar tag <td></td>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function td($label, $data = [])
+    {
+        return '<td' . Parse::attr($data) . '>' . $label . '</td>';
+    }
+
+    /**
+     * Gerar tag <th></th>
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function th($label, $data = [])
+    {
+        return '<th' . Parse::attr($data) . '>' . $label . '</th>';
+    }
 }
