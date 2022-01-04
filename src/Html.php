@@ -7,6 +7,18 @@ use FVCode\Html\Parse;
 class Html
 {
     /**
+     * Gerar tag <!-- label -->
+     *
+     * @param string $label
+     * @param array $data Attributes in format [key=>value]
+     * @return string
+     */
+    public static function comment($label)
+    {
+        return '<!--' . $label . '-->';
+    }
+
+    /**
      * Gerar tag <h1></h1>
      *
      * @param string $label
